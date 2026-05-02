@@ -98,6 +98,16 @@
     font-size: 17px;
     line-height: 1.7;
     font-feature-settings: "ss01", "cv11";
+    animation: page-enter 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @keyframes page-enter {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  section[id] {
+    scroll-margin-top: 6rem;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -144,20 +154,28 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.05;
+    opacity: 0.08;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    mix-blend-mode: overlay;
+    mix-blend-mode: multiply;
+  }
+  .grain-dark::after {
+    mix-blend-mode: soft-light;
+    opacity: 0.12;
   }
 
   .shimmer {
     background: linear-gradient(
       90deg,
-      hsl(var(--sand-soft)) 0%,
-      hsl(33 56% 88%) 50%,
-      hsl(var(--sand-soft)) 100%
+      hsl(33 45% 86%) 0%,
+      hsl(33 56% 78%) 50%,
+      hsl(33 45% 86%) 100%
     );
     background-size: 200% 100%;
     animation: shimmer 1.8s ease-in-out infinite;
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ochre focus-visible:ring-offset-offwhite;
   }
 
   @keyframes shimmer {
@@ -168,5 +186,71 @@
   .section-divider {
     height: 1px;
     background: linear-gradient(90deg, transparent, hsl(var(--border)) 20%, hsl(var(--border)) 80%, transparent);
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .topo-pattern {
+    background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cg fill='none' stroke='%23D4A574' stroke-width='0.7' opacity='0.55'%3E%3Cpath d='M0 120 Q150 60 300 110 T600 90' /%3E%3Cpath d='M0 200 Q150 150 300 190 T600 170' /%3E%3Cpath d='M0 280 Q160 230 300 270 T600 250' /%3E%3Cpath d='M0 360 Q140 310 300 350 T600 330' /%3E%3Cpath d='M0 440 Q150 390 300 430 T600 410' /%3E%3Cpath d='M0 520 Q160 470 300 510 T600 490' /%3E%3C/g%3E%3C/svg%3E");
+    background-size: 900px 900px;
+    background-repeat: repeat;
+    animation: topo-drift 90s linear infinite;
+  }
+
+  @keyframes topo-drift {
+    from { background-position: 0 0; }
+    to { background-position: 900px 0; }
+  }
+
+  .glow-orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  @keyframes orb-drift-1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(40px, -30px) scale(1.1); }
+  }
+  @keyframes orb-drift-2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-50px, 40px) scale(0.9); }
+  }
+
+  @keyframes hover-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+  .animate-hover-float {
+    animation: hover-float 5s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee linear infinite;
+    width: max-content;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .topo-pattern,
+    .glow-orb,
+    .animate-hover-float,
+    .animate-marquee,
+    .animate-\[drift_2\.4s_ease-in-out_infinite\],
+    .animate-\[drift_8s_ease-in-out_infinite\] {
+      animation: none !important;
+    }
   }
 }

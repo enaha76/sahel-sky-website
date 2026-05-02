@@ -81,7 +81,7 @@ export const modules = [
     id: "agriculture",
     name: "Plug Agriculture",
     short: "Cartographie NDVI · Pulvérisation de précision (réservoir 50L).",
-    image: "/images/plug-agriculture.webp",
+    image: "/PLUG_AGRICULTURE.png",
     sectors: "Agriculture · Élevage · Eaux & Forêts",
     specs: ["Réservoir 50L", "Multi-spectral NDVI", "Buses anti-dérive"],
     impact: "+15-25% rendement agricole",
@@ -90,7 +90,7 @@ export const modules = [
     id: "inspection",
     name: "Plug Inspection",
     short: "Éoliennes, lignes haute tension, fuselages aéronautiques.",
-    image: "/images/plug-inspection.webp",
+    image: "/PLUG_INSPECTION_Drone_segmentation_de_fissure.png",
     sectors: "Énergie · Aéronautique · Industrie",
     specs: ["Caméra thermique 640p", "Zoom optique 30x", "LiDAR embarqué"],
     impact: "−40 à 60% coût d'inspection",
@@ -99,7 +99,7 @@ export const modules = [
     id: "monitoring",
     name: "Plug Monitoring",
     short: "Scan urbain 3D, détection de déchets et eaux stagnantes.",
-    image: "/images/plug-monitoring.webp",
+    image: "/PLUG%20MONITORING_Drone_multi-segmentation_urbaine.png",
     sectors: "Smart Cities · Santé publique · Urbanisme",
     specs: ["Photogrammétrie 3D", "IA computer vision", "Détection automatisée"],
     impact: "Cartographie urbaine 10x plus rapide",
@@ -108,7 +108,7 @@ export const modules = [
     id: "mining",
     name: "Plug Mining",
     short: "Magnétomètres en réseau, détection de mines explosives.",
-    image: "/images/plug-mining.webp",
+    image: "/PLUG_MINING_Drone_magnetic_anomaly_heatmap.png",
     sectors: "Mines · Défense · Sécurité civile",
     specs: ["Magnétomètre fluxgate", "Vol en essaim", "Cartographie GPR"],
     impact: "Zones sécurisées 5x plus vite",
@@ -199,6 +199,32 @@ export const cta = {
   },
 };
 
+export const contactForm = {
+  fr: {
+    title: "Contactez SahelSky",
+    sub: "Démo, partenariat, presse — écrivez-nous, nous répondons sous 48h ouvrées.",
+    fields: {
+      name: "Nom complet",
+      email: "Email professionnel",
+      organization: "Organisation (optionnel)",
+      subject: "Sujet",
+      message: "Votre message",
+    },
+    subjects: [
+      "Demander une démo",
+      "Devenir partenaire",
+      "Presse / Média",
+      "Recrutement",
+      "Autre",
+    ],
+    submit: "Envoyer",
+    sending: "Envoi…",
+    success: "Message envoyé. Notre équipe revient vers vous sous peu.",
+    error: "L'envoi a échoué. Réessayez ou écrivez à contact@sahelskyuas.mr.",
+    close: "Fermer",
+  },
+};
+
 export const footer = {
   fr: {
     tagline: "Assemble · Integrate · Innovate",
@@ -210,5 +236,7 @@ export const footer = {
     ],
     contact: { email: "contact@sahelskyuas.mr", city: "Nouakchott, Mauritanie" },
     bottom: "© 2026 SahelSky UAS · Soutenu par la République Islamique de Mauritanie",
+    disclaimer:
+      "Visuels du site : renders et schémas conceptuels. Prototypes en développement.",
   },
 };

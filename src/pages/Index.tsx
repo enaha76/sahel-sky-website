@@ -10,6 +10,10 @@ import { Team } from "@/components/sections/Team";
 import { Roadmap } from "@/components/sections/Roadmap";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/sections/Footer";
+import { ScrollProgress } from "@/components/ScrollProgress";
+import { StickyMobileCTA } from "@/components/StickyMobileCTA";
+import { ContactModal } from "@/components/ContactModal";
+import { nav } from "@/lib/content";
 
 const Index = () => {
   const [lang, setLang] = useState<"fr" | "en">("fr");
@@ -20,6 +24,7 @@ const Index = () => {
 
   return (
     <main className="min-h-screen bg-offwhite text-charcoal">
+      <ScrollProgress />
       <Navigation lang={lang} setLang={setLang} />
       <Hero lang={lang} />
       <Problem />
@@ -31,6 +36,8 @@ const Index = () => {
       <Roadmap />
       <FinalCTA />
       <Footer />
+      <StickyMobileCTA label={nav[lang].cta} />
+      <ContactModal />
     </main>
   );
 };
