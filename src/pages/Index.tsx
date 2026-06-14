@@ -6,7 +6,6 @@ import { Solution } from "@/components/sections/Solution";
 import { Plugs } from "@/components/sections/Plugs";
 import { Tech } from "@/components/sections/Tech";
 import { Impact } from "@/components/sections/Impact";
-import { Team } from "@/components/sections/Team";
 import { Roadmap } from "@/components/sections/Roadmap";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/sections/Footer";
@@ -32,7 +31,6 @@ const Index = () => {
       <Plugs />
       <Tech />
       <Impact />
-      <Team />
       <Roadmap />
       <FinalCTA />
       <Footer />

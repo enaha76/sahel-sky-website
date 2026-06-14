@@ -155,27 +155,9 @@ export const impact = {
   },
 };
 
-export const team = {
-  fr: {
-    section: "06",
-    label: "L'ÉQUIPE",
-    title: "7 fondateurs. Une vision.",
-    eyebrow: "Âge moyen 25 ans · Polytechnique · ENSTA · ENSIMAG · ENIT · SUPNUM",
-    members: [
-      { name: "Zayed Herma", role: "CEO & Co-fondateur", school: "École Polytechnique" },
-      { name: "Mohamed Mahmoud", role: "CTO Hardware", school: "ENSTA Paris" },
-      { name: "Ahmedou Beillahi", role: "Lead Embedded Systems", school: "ENSIMAG" },
-      { name: "Cheikh Ahmedou Enaha", role: "Head of AI", school: "École Polytechnique" },
-      { name: "Mohamed Ahmed", role: "Head of Operations", school: "ENIT Tunis" },
-      { name: "Sidi Ali Tijani", role: "Lead Mechanical Eng.", school: "SUPNUM" },
-      { name: "Mohamed Lemine", role: "Head of Product", school: "ENSTA Paris" },
-    ],
-  },
-};
-
 export const roadmap = {
   fr: {
-    section: "07",
+    section: "06",
     label: "ROADMAP",
     title: "De Nouakchott au continent.",
     items: [
